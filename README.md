@@ -76,6 +76,36 @@ python src\inference.py --weights runs/detect/train/weights/best.pt --source pat
 python src\benchmark.py --weights runs/detect/train/weights/best.pt --source 0 --measure 300
 ```
 
+## Tracking (Video IDs)
+Track characters with persistent IDs using ByteTrack:
+```powershell
+python src\track.py --weights runs/detect/train/weights/best.pt --source 0 --show --save
+```
+Outputs are saved under `runs/track`.
+
+## Experiment Tracking (W&B)
+- Install and login:
+```powershell
+pip install wandb
+wandb login
+```
+- Ultralytics integrates with W&B automatically when installed. Your training runs will sync metrics, curves, and artifacts.
+
+## Ablations (Model Size Sweep)
+Compare model sizes for speed/accuracy trade-offs:
+```powershell
+python src\sweep.py --models yolov8n.pt yolov8s.pt yolov8m.pt --epochs 5 --imgsz 640
+```
+Pick the best-performing checkpoint from `runs/detect`.
+
+## Make It Stand Out (Ideas)
+- Data-centric: combine multiple public anime datasets; unify label names; oversample rare classes; apply style-transfer augmentations.
+- Multi-task: add an attribute head (hair color, outfit) or secondary classifier for fine identity disambiguation.
+- Video pipeline: integrate tracking + re-identification for consistent IDs across shots.
+- Robustness: cross-domain evaluation (fanart vs frames), corruption tests (blur, noise), adversarial occlusion augmentation.
+- Edge deploy: export ONNX/TensorRT, INT8 quantization; benchmark on CPU vs GPU; report latency and memory.
+- MLOps: log to W&B, version datasets, add a small GitHub Actions CI for lint/build.
+
 ## Dataset Preparation Workflow
 1. Collect and label images (Roboflow or LabelImg), export in YOLO format.
 2. Place raw images and labels in folders, e.g. `raw/images` and `raw/labels`.
