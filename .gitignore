@@ -1,0 +1,139 @@
+# .gitignore - Anime YOLO AI
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# PyCharm
+.idea/
+
+# Data directories (large datasets)
+data/raw/images/**
+!data/raw/images/.gitkeep
+data/raw/labels/**
+!data/raw/labels/.gitkeep
+data/prepared/
+*.csv
+*.parquet
+
+# Model weights (large files)
+runs/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Logs
+*.log
+logs/
+.mlflow/
+
+# API temporary files
+api/temp/
+api/uploads/
+
+# Test outputs
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker
+.dockerignore
+
+# Environment variables
+.env.local
+.env.*.local
+
+# Large CSV files (keep manifest but ignore full dataset)
+all_data.csv
+anime_characters.csv
+anime.csv
+manga.csv
+
+# Keep manifest for tracking
+!manifest_filtered.csv
+
+# W&B
+wandb/
+
+# Node modules (if any)
+node_modules/
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+
+# Exclude API model cache
+api/model_cache/
+
+# Keep directory structure
+!data/raw/images/.gitkeep
+!data/raw/labels/.gitkeep
+!runs/.gitkeep
+!api/temp/.gitkeep

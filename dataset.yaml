@@ -1,7 +1,6 @@
-train: data/images/train
-val: data/images/val
-
-test: 
+path: data/raw
+train: images/train
+val: images/val
 
 nc: 5
-names: ['Naruto', 'Goku', 'Luffy', 'Sukuna', 'Gojo']
+names: ['naruto','luffy','gojo','goku','sukuna']

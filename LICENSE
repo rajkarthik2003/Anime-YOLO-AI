@@ -1,0 +1,78 @@
+MIT License
+
+Copyright (c) 2024 Anime YOLO AI Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Third-Party Licenses
+
+This project uses the following open-source libraries:
+
+### YOLOv8 (Ultralytics)
+- License: AGPL-3.0
+- Repository: https://github.com/ultralytics/ultralytics
+- Copyright: Ultralytics
+
+### FastAPI
+- License: MIT
+- Repository: https://github.com/tiangolo/fastapi
+- Copyright: Sebastián Ramírez
+
+### PyTorch
+- License: BSD-3-Clause
+- Repository: https://github.com/pytorch/pytorch
+- Copyright: PyTorch contributors
+
+### OpenCV
+- License: Apache 2.0
+- Repository: https://github.com/opencv/opencv
+- Copyright: OpenCV contributors
+
+### MLflow
+- License: Apache 2.0
+- Repository: https://github.com/mlflow/mlflow
+- Copyright: Databricks, Inc.
+
+### Albumentations
+- License: MIT
+- Repository: https://github.com/albumentations-team/albumentations
+- Copyright: Albumentations contributors
+
+---
+
+## Dataset Attribution
+
+This project uses images from SafeBooru:
+- Source: https://safebooru.org/
+- License: Images are subject to individual copyright by their respective creators
+- Usage: Educational and research purposes only
+- Note: Ensure compliance with individual image licenses before commercial use
+
+---
+
+## Commercial Use Notice
+
+While this software is licensed under MIT, please note:
+1. YOLOv8 (Ultralytics) uses AGPL-3.0 license - commercial use may require separate licensing
+2. SafeBooru images have individual copyrights - verify licenses before commercial deployment
+3. Consult with legal counsel before commercial deployment
+
+For YOLOv8 commercial licensing, contact: https://ultralytics.com/license
