@@ -3,7 +3,7 @@ from pathlib import Path
 from ultralytics import YOLO
 import cv2
 
-MODEL_PATH = os.path.join('runs','detect','train','weights','best.pt')
+MODEL_PATH = os.path.join('runs','detect','train2','weights','best.pt')
 IN_DIR = os.path.join('data','raw','images','val')
 OUT_DIR = os.path.join('runs','batch_preds')
 os.makedirs(OUT_DIR, exist_ok=True)

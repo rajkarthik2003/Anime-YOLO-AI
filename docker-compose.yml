@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    image: anime-yolo-api:latest
+    container_name: anime-yolo-api
+    ports:
+      - "8000:8000"
+    environment:
+      - UVICORN_WORKERS=2
+      - UVICORN_HOST=0.0.0.0
+      - UVICORN_PORT=8000
+    volumes:
+      - ./runs:/app/runs
+      - ./api:/app/api
+      - ./models:/app/models
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow-ui
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+    command: ["mlflow", "ui", "--host", "0.0.0.0", "--port", "5000"]

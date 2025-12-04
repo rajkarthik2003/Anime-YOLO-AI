@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import json
 from pathlib import Path
 
-def evaluate_model(weights_path='runs/detect/train/weights/best.pt', 
+def evaluate_model(weights_path='runs/detect/train2/weights/best.pt', 
                    data_yaml='dataset.yaml',
                    output_dir='runs/evaluation'):
     """
@@ -52,11 +52,11 @@ def evaluate_model(weights_path='runs/detect/train/weights/best.pt',
     
     # Per-class metrics
     class_names = ['naruto', 'luffy', 'gojo', 'goku', 'sukuna']
+    ap_per_class = metrics.box.ap if hasattr(metrics.box, 'ap') else []
     for i, cls_name in enumerate(class_names):
-        if i < len(metrics.box.ap):
+        if i < len(ap_per_class):
             results['per_class_metrics'][cls_name] = {
-                'AP50': float(metrics.box.ap[i]),
-                'AP50-95': float(metrics.box.ap_class_index.get(i, 0.0))
+                'AP50': float(ap_per_class[i]) if isinstance(ap_per_class[i], (int, float)) else 0.0,
             }
     
     # Save metrics to JSON
@@ -82,7 +82,7 @@ def evaluate_model(weights_path='runs/detect/train/weights/best.pt',
 
 if __name__ == '__main__':
     # Check if weights exist
-    weights_path = 'runs/detect/train/weights/best.pt'
+    weights_path = 'runs/detect/train2/weights/best.pt'
     if not os.path.exists(weights_path):
         print(f"ERROR: Weights not found at {weights_path}")
         print("Please train the model first using train.py")

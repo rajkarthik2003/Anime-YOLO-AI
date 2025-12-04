@@ -2,10 +2,12 @@ from ultralytics import YOLO
 import cv2
 import argparse
 
+# Global model instance for API import
+model = YOLO('runs/detect/train2/weights/best.pt')
 
 def parse_args():
     p = argparse.ArgumentParser(description="Real-time inference for anime detection")
-    p.add_argument('--weights', type=str, default='runs/detect/train/weights/best.pt', help='Path to trained weights')
+    p.add_argument('--weights', type=str, default='runs/detect/train2/weights/best.pt', help='Path to trained weights')
     p.add_argument('--source', type=str, default='0', help='Source: 0 for webcam, path for image/video')
     p.add_argument('--conf', type=float, default=0.25, help='Confidence threshold')
     p.add_argument('--show', action='store_true', help='Show window output')
@@ -52,3 +54,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Initialize global model for API
+model = YOLO('runs/detect/train2/weights/best.pt')
